@@ -1,203 +1,255 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tu lenguaje — Presentación</title>
-  <meta name="description" content="Presentación del nuevo lenguaje visual inspirado en Python, con sintaxis geométrica y cromática." />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2300a8ff'/><text x='50' y='60' font-size='48' text-anchor='middle' fill='white'>λ</text></svg>">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tu lenguaje — Presentación</title>
+    <meta name="description"
+        content="Presentación del nuevo lenguaje visual inspirado en Python, con sintaxis geométrica y cromática." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2300a8ff'/><text x='50' y='60' font-size='48' text-anchor='middle' fill='white'>λ</text></svg>">
 </head>
+
 <body>
-<header class="site-header">
-  <a class="brand" href="#top" aria-label="Inicio">
-    <span class="logo">λ</span>
-    <span class="brand-text">Lenguaje TreeVisual</span>
-  </a>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Inicio">
+            <span class="logo">λ</span>
+            <span class="brand-text">Lenguaje TreeVisual</span>
+        </a>
 
-  <nav class="nav" aria-label="Secciones">
-    <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
-    <ul id="menu">
-      <li><a href="#intro">Introducción</a></li>
-      <li><a href="#tipos">Tipos</a></li>
-      <li><a href="#variables">Variables</a></li>
-      <li><a href="#operadores">Operadores</a></li>
-      <li><a href="#letras-numeros">Letras y Números</a></li>
-      <li><a href="#control">Control de flujo</a></li>
-      <li><a href="#funciones">Funciones</a></li>
-      <li><a href="#errores-io">Errores e I/O</a></li>
-      <li><a href="#ejemplo">Ejemplo</a></li>
-    </ul>
-  </nav>
+        <nav class="nav" aria-label="Secciones">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+            <ul id="menu">
+                <li><a href="#intro">Introducción</a></li>
+                <li><a href="#tipos">Tipos</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#operadores">Operadores</a></li>
+                <li><a href="#letras-numeros">Letras y Números</a></li>
+                <li><a href="#control">Control de flujo</a></li>
+                <li><a href="#funciones">Funciones</a></li>
+                <li><a href="#errores-io">Errores e I/O</a></li>
+                <li><a href="#ejemplo">Ejemplo</a></li>
+            </ul>
+        </nav>
 
-  <button id="theme-btn" class="theme-btn" title="Cambiar tema" aria-label="Cambiar tema">🌓</button>
-</header>
+        <button id="theme-btn" class="theme-btn" title="Cambiar tema" aria-label="Cambiar tema">🌓</button>
+    </header>
 
-<main id="top">
-  <section id="intro" class="hero">
-    <div class="hero-inner">
-      <h1>Lenguaje TreeVisual</h1>
-      <p class="lead">
-        Un lenguaje visual donde la sintaxis son <strong>formas</strong> y <strong>colores</strong>.
-        Aquí tienes una guía rápida con capturas y la explicación de cómo se traduce desde Python.
-      </p>
-      <a class="cta" href="#ejemplo">Ir al ejemplo compilado</a>
-    </div>
-  </section>
+    <main id="top">
+        <section id="intro" class="hero">
+            <div class="hero-inner">
+                <h1>Lenguaje TreeVisual</h1>
+                <p class="lead">
+                    Un lenguaje visual donde la sintaxis son <strong>formas</strong> y <strong>colores</strong>.
+                    Aquí tienes una guía rápida con capturas y la explicación de cómo se traduce desde Python.
+                </p>
+                <a class="cta" href="#ejemplo">Ir al ejemplo compilado</a>
+            </div>
+        </section>
 
-  <!-- Tipos -->
-  <section id="tipos" class="section">
-    <h2>Tipos de datos básicos</h2>
-    <div class="grid">
-      <figure class="card">
-        <img loading="lazy" src="assets/tipos.png" alt="Tipos básicos representados con formas: int, float, complex, string y bool." data-zoom>
-        <figcaption>
-          En este lenguaje, los tipos se representan con <strong>formas geométricas</strong>:
-          <ul>
-            <li><em>int</em> (<span class><strong>ángulo 30°</strong></span>)</li>
-            <li><em>float</em> (<span class><strong>ángulo 60°</strong></span>)</li>
-            <li><em>complex</em> (<span class><strong>ángulo 45°</strong></span>)</li>
-            <li><em>str</em> (<span class><strong>barra</strong></span>)</li>
-            <li><em>bool</em> (<span class><strong>ticks verde/rojo</span> para <code>true</code>/<code>false</code></strong>)</li>
-          </ul>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
+        <!-- Tipos -->
+        <section id="tipos" class="section">
+            <h2>Tipos de datos básicos</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/tipos.png"
+                        alt="Tipos básicos representados con formas: int, float, complex, string y bool." data-zoom>
+                    <figcaption>
+                        En este lenguaje, los tipos se representan con <strong>formas geométricas</strong>:
+                        <ul>
+                            <li><em>int</em> (<span class><strong>ángulo 30°</strong></span>)</li>
+                            <li><em>float</em> (<span class><strong>ángulo 60°</strong></span>)</li>
+                            <li><em>complex</em> (<span class><strong>ángulo 45°</strong></span>)</li>
+                            <li><em>str</em> (<span class><strong>barra</strong></span>)</li>
+                            <li><em>bool</em> (<span class><strong>ticks verde/rojo</span> para
+                                <code>true</code>/<code>false</code></strong>)
+                            </li>
+                        </ul>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <!-- Variables -->
-  <section id="variables" class="section">
-    <h2>Variables y color</h2>
-    <div class="grid">
-      <figure class="card">
-        <img loading="lazy" src="assets/variable-color.png" alt="Una variable coloreada (rojo) como ejemplo de declaración." data-zoom>
-        <figcaption>
-          Toda variable se identifica por su <strong>color</strong>. Por ejemplo, la variable roja 
-          representa una entidad almacenada con ese color y se reutiliza en el programa.
-        </figcaption>
-      </figure>
-    </div>
-  </section>
+        <!-- Variables -->
+        <section id="variables" class="section">
+            <h2>Variables y color</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/variable-color.png"
+                        alt="Una variable coloreada (rojo) como ejemplo de declaración." data-zoom>
+                    <figcaption>
+                        Toda variable se identifica por su <strong>color</strong>. Por ejemplo, la variable roja
+                        representa una entidad almacenada con ese color y se reutiliza en el programa.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <!-- Operadores -->
-  <section id="operadores" class="section">
-    <h2>Operadores</h2>
-    <div class="grid">
-      <figure class="card">
-        <img loading="lazy" src="assets/operadores.png" alt="Traducción de operadores relacionales, aritméticos y lógicos a símbolos del lenguaje." data-zoom>
-        <figcaption>
-          Seis grupos: relacionales/asignación (<code>=, !=, &gt;, &lt;, &gt;=, &lt;=</code>), aritméticos (<code>+, -, *, **, /, //, %</code>) y lógicos/pertinencia (<code>and, or, not, is</code>), todos con sus equivalentes gráficos.
-        </figcaption>
-      </figure>
-    </div>
-  </section>
+        <!-- Operadores -->
+        <section id="operadores" class="section">
+            <h2>Operadores</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/operadores.png"
+                        alt="Traducción de operadores relacionales, aritméticos y lógicos a símbolos del lenguaje."
+                        data-zoom>
+                    <figcaption>
+                        Seis grupos: relacionales/asignación (<code>=, !=, &gt;, &lt;, &gt;=, &lt;=</code>), aritméticos
+                        (<code>+, -, *, **, /, //, %</code>) y lógicos/pertinencia (<code>and, or, not, is</code>),
+                        todos con sus equivalentes gráficos.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <!-- Letras y Números -->
-  <section id="letras-numeros" class="section">
-    <h2>Letras y números</h2>
-    <div class="grid">
-      <figure class="card">
-        <img loading="lazy" src="assets/letras-numeros.png" alt="Dodecágono para letras y zigzag azul para números con marcas verdes y rojas." data-zoom>
-        <figcaption>
-          <p><strong>Letras:</strong> se dibuja un <em>dodecágono</em> (máx. 12 lados) para indicar la longitud de la palabra. 
-          El número de lados ≡ número de letras (1–12). Siempre se colorea con el <em>color de su variable</em>.</p>
-          <p><strong>Números:</strong> línea en <em>zigzag azul</em>; cada esquina vale 1 unidad.
-             Rayas <em>verdes arriba</em> marcan decenas. Puntos <em>rojos en esquinas</em> indican decimales.
-             Ej.: zigzag de 5 esquinas con 4 puntos rojos → <code>5.4</code>. Para <code>5.9</code>, completas
-             lo que falta del zigzag en <em>rojo</em> para llegar al decimal deseado.</p>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
+        <!-- Letras y Números -->
+        <section id="letras-numeros" class="section">
+            <h2>Letras y números</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/letras-numeros.png"
+                        alt="Dodecágono para letras y zigzag azul para números con marcas verdes y rojas." data-zoom>
+                    <figcaption>
+                        <p><strong>Letras:</strong> se dibuja un <em>dodecágono</em> (máx. 12 lados) para indicar la
+                            longitud de la palabra.
+                            El número de lados ≡ número de letras (1–12). Siempre se colorea con el <em>color de su
+                                variable</em>.</p>
+                        <p><strong>Números:</strong> línea en <em>zigzag azul</em>; cada esquina vale 1 unidad.
+                            Rayas <em>verdes arriba</em> marcan decenas. Puntos <em>rojos en esquinas</em> indican
+                            decimales.
+                            Ej.: zigzag de 5 esquinas con 4 puntos rojos → <code>5.4</code>. Para <code>5.9</code>,
+                            completas
+                            lo que falta del zigzag en <em>rojo</em> para llegar al decimal deseado.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <!-- Control de flujo -->
-  <section id="control" class="section">
-    <h2>Control de flujo</h2>
-    <div class="grid">
-      <figure class="card">
-        <img loading="lazy" src="assets/control-flujo.png" alt="Formas de if, elif, else, while, for, break, continue, pass." data-zoom>
-        <figcaption>
-          Representaciones para <code>if</code>, <code>elif</code>, <code>else</code>, <code>while</code>, <code>for</code>, <code>break</code>, <code>continue</code> y <code>pass</code>.
-        </figcaption>
-      </figure>
-    </div>
-  </section>
+        <!-- Control de flujo -->
+        <section id="control" class="section">
+            <h2>Control de flujo</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/control-flujo.png"
+                        alt="Formas de if, elif, else, while, for, break, continue, pass." data-zoom>
+                    <figcaption>
+                        Representaciones para <code>if</code>, <code>elif</code>, <code>else</code>, <code>while</code>,
+                        <code>for</code>, <code>break</code>, <code>continue</code> y <code>pass</code>.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <!-- Funciones -->
-  <section id="funciones" class="section">
-    <h2>Funciones e importación</h2>
-    <div class="grid">
-      <figure class="card">
-        <img loading="lazy" src="assets/funciones.png" alt="Formas para def, return, lambda, *args, **kwargs, import, from import, as." data-zoom>
-        <figcaption>
-          Sintaxis gráfica para <code>def</code>/<code>return</code>, <code>lambda</code>, parámetros <code>*args</code> y <code>**kwargs</code>, 
-          <code>import</code>, <code>from ... import ...</code> y alias <code>as</code>.
-        </figcaption>
-      </figure>
-    </div>
-  </section>
+        <!-- Funciones -->
+        <section id="funciones" class="section">
+            <h2>Funciones e importación</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/funciones.png"
+                        alt="Formas para def, return, lambda, *args, **kwargs, import, from import, as." data-zoom>
+                    <figcaption>
+                        Sintaxis gráfica para <code>def</code>/<code>return</code>, <code>lambda</code>, parámetros
+                        <code>*args</code> y <code>**kwargs</code>,
+                        <code>import</code>, <code>from ... import ...</code> y alias <code>as</code>.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <!-- Errores y E/S -->
-  <section id="errores-io" class="section">
-    <h2>Manejo de errores y E/S</h2>
-    <div class="grid">
-      <figure class="card">
-        <img loading="lazy" src="assets/errores-io.png" alt="Formas para try, except, finally, raise, y los nodos de print e input." data-zoom>
-        <figcaption>
-          <code>try</code>, <code>except</code>, <code>finally</code> y <code>raise</code> tienen gestos propios.
-          Para Entrada/Salida, <code>print</code> e <code>input</code> se marcan con círculos (naranja/verde).
-        </figcaption>
-      </figure>
-    </div>
-  </section>
+        <!-- Errores y E/S -->
+        <section id="errores-io" class="section">
+            <h2>Manejo de errores y E/S</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/errores-io.png"
+                        alt="Formas para try, except, finally, raise, y los nodos de print e input." data-zoom>
+                    <figcaption>
+                        <code>try</code>, <code>except</code>, <code>finally</code> y <code>raise</code> tienen gestos
+                        propios.
+                        Para Entrada/Salida, <code>print</code> e <code>input</code> se marcan con círculos
+                        (naranja/verde).
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <!-- Ejemplo -->
-  <section id="ejemplo" class="section example">
-    <h2>Ejemplo: programa y traducción</h2>
-    <div class="grid two">
-      <figure class="card">
-        <img loading="lazy" src="assets/ejemplo.png" alt="Programa completo con dos variables, una comparación y un print con comillas verdes." data-zoom>
-        <figcaption>
-          El programa define 2 variables:
-          <ul>
-            <li>Variable <span class><strong><em>roja</em></strong></span> = <code>5</code></li>
-            <li>Variable <span class><strong><em>naranja</em></strong></span> = <code>4.2</code></li>
-          </ul>
-          Luego hace un <code>if</code> comprobando si una es <em>menor</em> que la otra y lo imprime.
-          Las <strong>“c” verdes</strong> fuera del <code>print</code> marcan el inicio/fin de comillas.
-          En la otra rama, <code>else</code> expresa que si no es menor, entonces la otra es <em>mayor o igual</em>.
-        </figcaption>
-      </figure>
+        <!-- Ejemplo -->
+        <section id="ejemplo" class="section example">
+            <h2>Ejemplo: programa y traducción</h2>
+            <div class="grid two">
+                <figure class="card">
+                    <!-- Usa el nombre que le hayas dado a la nueva captura.
+           Si quieres, puedes sobrescribir el antiguo assets/ejemplo.png -->
+                    <img loading="lazy" src="assets/ejemplo.png"
+                        alt="Programa visual con asignaciones, comparación, suma, bucle for, definición de función y llamada con print final."
+                        data-zoom>
+                    <figcaption>
+                        El programa hace lo siguiente, de arriba a abajo:
+                        <ol>
+                            <li>Declara dos variables: <code>x = 5</code> y <code>y = 4.2</code>.</li>
+                            <li>Evalúa la condición <code>if x &gt; y</code>:
+                                <ul>
+                                    <li>Si se cumple, imprime <strong>"x es mayor"</strong>.</li>
+                                    <li>Si no, imprime <strong>"y es mayor o igual"</strong>.</li>
+                                </ul>
+                            </li>
+                            <li>Crea una nueva variable <code>z</code> con la suma de <code>x + y</code>.</li>
+                            <li>Ejecuta un bucle <code>for</code> que recorre <code>range(3)</code> e imprime la
+                                iteración actual.</li>
+                            <li>Define una función <code>suma(a, b)</code> que retorna la suma de sus parámetros.</li>
+                            <li>Llama a la función con <code>suma(x, int(y))</code> y guarda el resultado en
+                                <code>resultado</code>.</li>
+                            <li>Finalmente, imprime <strong>"El resultado de la función es:"</strong> seguido del valor
+                                calculado.</li>
+                        </ol>
+                    </figcaption>
+                </figure>
 
-      <div class="card code">
-<pre><code class="lang py">
-# Traducción conceptual a Python
-roja = 5
-naranja = 4.2
+                <div class="card code">
+                    <pre><code class="lang py">
+x = 5
+y = 4.2
 
-if roja &lt; naranja:
-    print("La variable roja es menor que la naranja")
+if x &gt; y:
+    print("x es mayor")
 else:
-    print("La variable naranja es mayor o igual que la roja")
+    print("y es mayor o igual")
+
+# Nueva variable
+z = x + y
+
+# Bucle
+for i in range(3):
+    print("Iteración:", i)
+
+# Función
+def suma(a, b):
+    return a + b
+
+resultado = suma(x, int(y))
+print("El resultado de la función es:", resultado)
 </code></pre>
-        <p class="note">Nota: El lenguaje debe leerse desde arriba hacia abajo y debes leer todas las ramas del árbol.</p>
-      </div>
-    </div>
-  </section>
-</main>
+                    <p class="note">En el lenguaje geométrico, cada paso se expresa con formas y colores en vez de
+                        palabras clave.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer class="site-footer">
-  <p>© <span id="year"></span> Lenguaje TreeVisual — Hecho por Jaime Montalvo, Marina Jiménez y Hugo Muñoz.</p>
-</footer>
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Lenguaje TreeVisual — Hecho por Jaime Montalvo, Marina Jiménez y Hugo Muñoz.</p>
+    </footer>
 
-<!-- Lightbox -->
-<dialog id="lightbox">
-  <button class="close" aria-label="Cerrar">✕</button>
-  <img alt="">
-  <p class="caption"></p>
-</dialog>
+    <!-- Lightbox -->
+    <dialog id="lightbox">
+        <button class="close" aria-label="Cerrar">✕</button>
+        <img alt="">
+        <p class="caption"></p>
+    </dialog>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>
