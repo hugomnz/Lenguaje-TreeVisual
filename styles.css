@@ -1,0 +1,123 @@
+:root{
+  --bg: #0b0c10;
+  --surface: #121318;
+  --text: #e7ebf0;
+  --muted: #a9b2c0;
+  --primary: #00a8ff;
+  --accent: #7c4dff;
+  --card: #161922;
+  --border: #23283a;
+  --ring: 0 0 0 3px rgba(0,168,255,.25);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  color:var(--text);
+  background: radial-gradient(1200px 1200px at 80% -10%, #1b2235 0, var(--bg) 40%);
+}
+
+a{color:var(--primary); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.site-header{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; padding:.75rem 1rem; backdrop-filter:saturate(180%) blur(8px);
+  background: color-mix(in lab, var(--bg) 75%, transparent);
+  border-bottom:1px solid var(--border);
+}
+.brand{display:flex; align-items:center; gap:.6rem; font-weight:700}
+.logo{display:grid; place-items:center; width:36px; height:36px; border-radius:50%; background:var(--primary); color:#fff; font-weight:800}
+.brand-text{letter-spacing:.3px}
+
+.nav-toggle{display:none; font-size:1.25rem; background:none; border:1px solid var(--border); color:var(--text); padding:.4rem .6rem; border-radius:.6rem}
+.nav ul{display:flex; gap:.75rem; list-style:none; margin:0; padding:0}
+.nav a{display:block; padding:.5rem .75rem; border-radius:.7rem}
+.nav a:hover{background:var(--surface); text-decoration:none}
+
+.theme-btn{
+  background:var(--card); border:1px solid var(--border); color:var(--text);
+  padding:.5rem .6rem; border-radius:.7rem; cursor:pointer;
+}
+.theme-btn:focus{outline: none; box-shadow: var(--ring)}
+
+.hero{
+  padding:6rem 1rem 4rem; text-align:center;
+  background:
+    radial-gradient(800px 260px at 20% 0,#1e2a44 0%,transparent 70%),
+    radial-gradient(500px 260px at 80% 0,#142034 0%,transparent 70%);
+  border-bottom:1px solid var(--border);
+}
+.hero-inner{max-width:900px; margin-inline:auto}
+.hero h1{font-size:clamp(2rem, 4vw, 3rem); margin:.2rem 0 1rem}
+.lead{color:var(--muted); font-size:1.1rem}
+.cta{
+  display:inline-block; margin-top:1rem; background:linear-gradient(90deg,var(--primary), var(--accent));
+  color:#fff; padding:.75rem 1rem; border-radius:1rem; font-weight:700; text-decoration:none;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.section{padding:3rem 1rem; border-top:1px solid var(--border)}
+.section h2{max-width:1100px; margin:0 auto 1rem; font-size:clamp(1.4rem, 3.2vw, 2rem)}
+.grid{
+  max-width:1100px; margin:0 auto; display:grid; gap:1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+.card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:1rem; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.card img{display:block; width:100%; height:auto; cursor:zoom-in}
+.card figcaption{padding:1rem 1rem 1.25rem}
+.card ul{margin:.5rem 0 0 1.1rem}
+.card.code{padding:1rem}
+.card.code pre{margin:0; overflow:auto; background:#0f1220; padding:1rem; border-radius:.8rem; border:1px solid var(--border)}
+.note{color:var(--muted); margin:.6rem 0 0}
+
+.chip{display:inline-block; padding:.1rem .5rem; border:1px solid var(--border); border-radius:.5rem; background:#0e1322}
+.chip.red{background:#2a0f14;border-color:#3b1a21}
+.chip.blue{background:#0f1c2a;border-color:#1a2b3b}
+
+.deploy ol{max-width:900px; margin:0 auto; padding-left:1.2rem}
+.deploy li{margin:.35rem 0}
+
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:1.5rem; text-align:center; color:var(--muted)
+}
+
+/* Lightbox */
+dialog#lightbox{
+  width:min(1024px, 96vw); max-height:90vh; border:none; border-radius:1rem; padding:0; background:var(--surface);
+}
+dialog::backdrop{background:rgba(0,0,0,.6)}
+#lightbox img{display:block; width:100%; height:auto}
+#lightbox .caption{margin:0; padding:0 .75rem 1rem; color:var(--muted)}
+#lightbox .close{
+  position:absolute; top:.5rem; right:.5rem; background:var(--card); color:var(--text);
+  border:1px solid var(--border); border-radius:.6rem; padding:.35rem .55rem; cursor:pointer;
+}
+
+/* Mobile nav */
+@media (max-width: 860px){
+  .nav-toggle{display:block}
+  .nav ul{display:none; position:absolute; right:1rem; top:64px; background:var(--surface);
+    border:1px solid var(--border); padding:.5rem; border-radius:.8rem; width:clamp(220px,50vw,320px); flex-direction:column}
+  .nav ul.show{display:flex}
+}
+
+/* Light theme (toggle) */
+.light{
+  --bg:#f6f7fb;
+  --surface:#fff;
+  --text:#12131a;
+  --muted:#475066;
+  --card:#fff;
+  --border:#e8eaf3;
+  background: radial-gradient(1200px 1200px at 80% -10%, #eaf0ff 0, var(--bg) 40%);
+}
+.light .card pre{background:#f7f8ff}
