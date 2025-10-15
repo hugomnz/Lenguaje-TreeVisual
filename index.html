@@ -197,24 +197,24 @@
 
                 <div class="card code">
                     <pre><code class="lang py">
-                      x = 5
-                      y = 4.2
+x = 5
+y = 4.2
 
-                      if x &gt; y:
-                          print("x es mayor")
-                      else:
-                          print("y es mayor o igual")
+if x &gt; y:
+    print("x es mayor")
+else:
+    print("y es mayor o igual")
 
-                      z = x + y
+z = x + y
 
-                      for i in range(3):
-                          print("Iteración:", i)
+for i in range(3):
+    print("Iteración:", i)
 
-                      def suma(a, b):
-                          return a + b
+def suma(a, b):
+    return a + b
 
-                      resultado = suma(x, int(y))
-                      print("El resultado de la función es:", resultado)
+resultado = suma(x, int(y))
+print("El resultado de la función es:", resultado)
                     </code></pre>
                     <p class="note">En el lenguaje geométrico, cada paso se representa con figuras y colores.</p>
                 </div>
@@ -251,36 +251,108 @@
                 <li><strong>Unidad de control:</strong> interpreta instrucciones y actualiza la interfaz.</li>
             </ul>
 
+            <!-- Fila con almacenamiento + esquema SVG al lado -->
             <div class="grid two">
                 <figure class="card">
                     <img loading="lazy" src="assets/vmc5_almacenamiento.jpg"
-                        alt="Diagrama de arquitectura de la máquina virtual" data-zoom>
-                    <figcaption>Diagrama técnico de la arquitectura interna: pila, registros, ALU, cursor y módulo
-                        gráfico.</figcaption>
+                        alt="Almacenamiento: pila de datos y representación" data-zoom>
+                    <figcaption>Almacenamiento de la VM: pila de datos y estructuras auxiliares.</figcaption>
                 </figure>
 
-                <div class="card code">
-                    <pre><code># Programa ejemplo
-                      >>> push 7
-                      STACK: [7]
-                      >>> push 8
-                      STACK: [7, 8]
-                      >>> add
-                      STACK: [15]
-                      >>> push 6
-                      STACK: [15, 6]
-                      >>> swap
-                      STACK: [6, 15]
-                      >>> mul
-                      STACK: [90]
-                      >>> push 8
-                      STACK: [90, 8]
-                      >>> div
-                      STACK: [11]
-                      >>> print abcd
-                      STACK: [11]
-                    </code></pre>
-                </div>
+                <!-- Esquema visual SVG embebido (no necesitas subir imagen) -->
+                <figure class="card">
+                    <figcaption style="padding:1rem 1rem 0">Esquema de la arquitectura de la VMC5</figcaption>
+                    <svg viewBox="0 0 920 520" role="img" aria-label="Esquema de arquitectura VMC5"
+                         style="display:block;width:100%;height:auto">
+                        <!-- Definiciones -->
+                        <defs>
+                            <style>
+                                .b{fill:#0f1220;stroke:#23283a;stroke-width:2;rx:14;ry:14}
+                                .t{font: 16px/1.2 system-ui,Segoe UI,Roboto,Arial; fill: var(--text,#e7ebf0)}
+                                .s{fill:none; stroke:#5aa9ff; stroke-width:2.2; marker-end:url(#arrow)}
+                                .s2{fill:none; stroke:#a5b4c3; stroke-width:2}
+                            </style>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth"
+                                    markerWidth="8" markerHeight="8" orient="auto">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#5aa9ff"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Memoria de programa -->
+                        <rect class="b" x="30" y="40" width="240" height="150"/>
+                        <text class="t" x="150" y="70" text-anchor="middle"><tspan font-weight="700">Memoria de programa</tspan></text>
+                        <text class="t" x="150" y="95" text-anchor="middle">Instrucciones</text>
+                        <!-- IP -->
+                        <rect class="b" x="70" y="120" width="60" height="40"/><text class="t" x="100" y="145" text-anchor="middle">IP</text>
+                        <rect class="b" x="150" y="120" width="60" height="40"/><text class="t" x="180" y="145" text-anchor="middle">PC</text>
+
+                        <!-- Unidad de control -->
+                        <rect class="b" x="320" y="40" width="260" height="90"/>
+                        <text class="t" x="450" y="75" text-anchor="middle"><tspan font-weight="700">Unidad de control</tspan></text>
+                        <text class="t" x="450" y="95" text-anchor="middle">Fetch → Decode → Execute</text>
+
+                        <!-- Flecha MemProg -> Control -->
+                        <path class="s" d="M 270 115 C 300 115 300 85 320 85"/>
+
+                        <!-- ALU -->
+                        <rect class="b" x="620" y="40" width="270" height="120"/>
+                        <text class="t" x="755" y="85" text-anchor="middle"><tspan font-weight="700">ALU</tspan> — ADD, SUB, MUL, DIV, MOD</text>
+
+                        <!-- Registros -->
+                        <rect class="b" x="320" y="170" width="260" height="90"/>
+                        <text class="t" x="450" y="200" text-anchor="middle"><tspan font-weight="700">Registros</tspan> (IP, SP, A)</text>
+
+                        <!-- Pila de datos -->
+                        <rect class="b" x="30" y="230" width="240" height="240"/>
+                        <text class="t" x="150" y="260" text-anchor="middle"><tspan font-weight="700">Pila de datos</tspan> (data_stack)</text>
+                        <!-- celdas de pila -->
+                        <rect x="60" y="280" width="180" height="35" class="s2"/>
+                        <rect x="60" y="320" width="180" height="35" class="s2"/>
+                        <rect x="60" y="360" width="180" height="35" class="s2"/>
+                        <rect x="60" y="400" width="180" height="35" class="s2" style="fill:#1d2840"/>
+
+                        <!-- Cursor -->
+                        <rect class="b" x="320" y="290" width="120" height="70"/>
+                        <text class="t" x="380" y="320" text-anchor="middle"><tspan font-weight="700">Cursor</tspan></text>
+                        <text class="t" x="380" y="340" text-anchor="middle">(x, y, dir)</text>
+
+                        <!-- Loop stack -->
+                        <rect class="b" x="460" y="290" width="120" height="70"/>
+                        <text class="t" x="520" y="320" text-anchor="middle"><tspan font-weight="700">loop_stack</tspan></text>
+
+                        <!-- Mapa occupied -->
+                        <rect class="b" x="320" y="380" width="260" height="90"/>
+                        <text class="t" x="450" y="415" text-anchor="middle"><tspan font-weight="700">occupied</tspan> — mapa de celdas</text>
+
+                        <!-- Módulo gráfico -->
+                        <rect class="b" x="620" y="260" width="270" height="210"/>
+                        <text class="t" x="755" y="295" text-anchor="middle"><tspan font-weight="700">Módulo gráfico</tspan> (Tkinter)</text>
+
+                        <!-- Flechas principales -->
+                        <path class="s" d="M 270 350 C 300 350 300 215 320 215"/>     <!-- Pila -> Registros -->
+                        <path class="s" d="M 580 115 C 610 115 610 100 620 100"/>       <!-- Control -> ALU -->
+                        <path class="s" d="M 580 205 C 700 205 700 240 755 240"/>       <!-- Registros -> ALU -->
+                        <path class="s" d="M 755 140 C 755 200 755 240 755 260"/>       <!-- ALU -> Módulo gráfico -->
+                        <path class="s" d="M 580 425 C 620 425 620 425 620 425"/>       <!-- occupied -> módulo gráfico -->
+                        <path class="s" d="M 440 325 C 440 260 440 260 450 260"/>       <!-- Cursor -> Registros (feedback) -->
+                    </svg>
+                    <figcaption style="padding:0 1rem 1rem">Flujo: Memoria de programa → Unidad de control → (Registros/ALU) → Módulo gráfico. La pila de datos alimenta operaciones y el estado visual.</figcaption>
+                </figure>
+            </div>
+
+            <!-- Código de ejemplo en una tarjeta aparte, debajo -->
+            <div class="card code" style="margin-top:1rem">
+                <pre><code># Programa ejemplo
+PUSH 7
+PUSH 8
+ADD
+PUSH 6
+SWAP
+MUL
+PUSH 8
+DIV
+PRINT abcd
+                </code></pre>
             </div>
         </section>
     </main>
