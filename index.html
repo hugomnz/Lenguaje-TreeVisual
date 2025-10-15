@@ -2,194 +2,300 @@
 <html lang="es">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tu lenguaje — Presentación</title>
-  <meta name="description"
-    content="Presentación del nuevo lenguaje visual inspirado en Python, con sintaxis geométrica y cromática." />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2300a8ff'/><text x='50' y='60' font-size='48' text-anchor='middle' fill='white'>λ</text></svg>">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tu lenguaje — Presentación</title>
+    <meta name="description"
+        content="Presentación del nuevo lenguaje visual inspirado en Python, con sintaxis geométrica y cromática." />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2300a8ff'/><text x='50' y='60' font-size='48' text-anchor='middle' fill='white'>λ</text></svg>">
 </head>
 
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Inicio">
-      <span class="logo">λ</span>
-      <span class="brand-text">Lenguaje TreeVisual</span>
-    </a>
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Inicio">
+            <span class="logo">λ</span>
+            <span class="brand-text">Lenguaje TreeVisual</span>
+        </a>
 
-    <nav class="nav" aria-label="Secciones">
-      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
-      <ul id="menu">
-        <li><a href="#intro">Introducción</a></li>
-        <li><a href="#tipos">Tipos</a></li>
-        <li><a href="#variables">Variables</a></li>
-        <li><a href="#operadores">Operadores</a></li>
-        <li><a href="#letras-numeros">Letras y Números</a></li>
-        <li><a href="#control">Control de flujo</a></li>
-        <li><a href="#funciones">Funciones</a></li>
-        <li><a href="#errores-io">Errores e I/O</a></li>
-        <li><a href="#ejemplo">Ejemplo</a></li>
-        <li><a href="#vm">Máquina Virtual</a></li>
-      </ul>
-    </nav>
+        <nav class="nav" aria-label="Secciones">
+            <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+            <ul id="menu">
+                <li><a href="#intro">Introducción</a></li>
+                <li><a href="#tipos">Tipos</a></li>
+                <li><a href="#variables">Variables</a></li>
+                <li><a href="#operadores">Operadores</a></li>
+                <li><a href="#letras-numeros">Letras y Números</a></li>
+                <li><a href="#control">Control de flujo</a></li>
+                <li><a href="#funciones">Funciones</a></li>
+                <li><a href="#errores-io">Errores e I/O</a></li>
+                <li><a href="#ejemplo">Ejemplo</a></li>
+                <!-- NUEVO ENLACE -->
+                <li><a href="#vm">Máquina Virtual</a></li>
+            </ul>
+        </nav>
 
-    <button id="theme-btn" class="theme-btn" title="Cambiar tema" aria-label="Cambiar tema">🌓</button>
-  </header>
+        <button id="theme-btn" class="theme-btn" title="Cambiar tema" aria-label="Cambiar tema">🌓</button>
+    </header>
 
-  <main id="top">
+    <main id="top">
+        <section id="intro" class="hero">
+            <div class="hero-inner">
+                <h1>Lenguaje TreeVisual</h1>
+                <p class="lead">
+                    Un lenguaje visual donde la sintaxis son <strong>formas</strong> y <strong>colores</strong>.
+                    Aquí tienes una guía rápida con capturas y la explicación de cómo se traduce desde Python.
+                </p>
+                <a class="cta" href="#ejemplo">Ir al ejemplo compilado</a>
+            </div>
+        </section>
 
-    <!-- Secciones existentes -->
-    <!-- (Todo tu contenido anterior igual, hasta el cierre de la sección ejemplo) -->
+        <!-- Tipos -->
+        <section id="tipos" class="section">
+            <h2>Tipos de datos básicos</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/tipos.png"
+                        alt="Tipos básicos representados con formas: int, float, complex, string y bool." data-zoom>
+                    <figcaption>
+                        En este lenguaje, los tipos se representan con <strong>formas geométricas</strong>:
+                        <ul>
+                            <li><em>int</em> (<strong>ángulo 30°</strong>)</li>
+                            <li><em>float</em> (<strong>ángulo 60°</strong>)</li>
+                            <li><em>complex</em> (<strong>ángulo 45°</strong>)</li>
+                            <li><em>str</em> (<strong>barra</strong>)</li>
+                            <li><em>bool</em> (ticks <span style="color:green;">verde</span>/<span
+                                    style="color:red;">rojo</span> para
+                                <code>true</code>/<code>false</code>)
+                            </li>
+                        </ul>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-    <section id="ejemplo" class="section example">
-      <h2>Ejemplo: programa y traducción</h2>
-      <div class="grid two">
-        <figure class="card">
-          <img loading="lazy" src="assets/ejemplo.png"
-            alt="Programa visual con asignaciones, comparación, suma, bucle for, definición de función y llamada con print final."
-            data-zoom>
-          <figcaption>
-            El programa hace lo siguiente, de arriba a abajo:
-            <ol>
-              <li>Declara dos variables: <code>x = 5</code> y <code>y = 4.2</code>.</li>
-              <li>Evalúa la condición <code>if x &gt; y</code>:
-                <ul>
-                  <li>Si se cumple, imprime <strong>"x es mayor"</strong>.</li>
-                  <li>Si no, imprime <strong>"y es mayor o igual"</strong>.</li>
-                </ul>
-              </li>
-              <li>Crea una nueva variable <code>z</code> con la suma de <code>x + y</code>.</li>
-              <li>Ejecuta un bucle <code>for</code> que recorre <code>range(3)</code> e imprime la iteración actual.</li>
-              <li>Define una función <code>suma(a, b)</code> que retorna la suma de sus parámetros.</li>
-              <li>Llama a la función con <code>suma(x, int(y))</code> y guarda el resultado en <code>resultado</code>.
-              </li>
-              <li>Finalmente, imprime <strong>"El resultado de la función es:"</strong> seguido del valor calculado.</li>
-            </ol>
-          </figcaption>
-        </figure>
+        <!-- Variables -->
+        <section id="variables" class="section">
+            <h2>Variables y color</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/variable-color.png"
+                        alt="Una variable coloreada (rojo) como ejemplo de declaración." data-zoom>
+                    <figcaption>
+                        Toda variable se identifica por su <strong>color</strong>. Por ejemplo, la variable roja
+                        representa una entidad almacenada con ese color y se reutiliza en el programa.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-        <div class="card code">
-          <pre><code class="lang py">
-x = 5
-y = 4.2
+        <!-- Operadores -->
+        <section id="operadores" class="section">
+            <h2>Operadores</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/operadores.png"
+                        alt="Traducción de operadores relacionales, aritméticos y lógicos a símbolos del lenguaje."
+                        data-zoom>
+                    <figcaption>
+                        Seis grupos: relacionales/asignación (<code>=, !=, &gt;, &lt;, &gt;=, &lt;=</code>), aritméticos
+                        (<code>+, -, *, **, /, //, %</code>) y lógicos/pertinencia (<code>and, or, not, is</code>),
+                        todos con sus equivalentes gráficos.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-if x &gt; y:
-    print("x es mayor")
-else:
-    print("y es mayor o igual")
+        <!-- Letras y Números -->
+        <section id="letras-numeros" class="section">
+            <h2>Letras y números</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/letras-numeros.png"
+                        alt="Dodecágono para letras y zigzag azul para números con marcas verdes y rojas." data-zoom>
+                    <figcaption>
+                        <p><strong>Letras:</strong> se dibuja un <em>dodecágono</em> (máx. 12 lados) para indicar la
+                            longitud de la palabra.
+                            El número de lados equivale al número de letras (1–12), siempre con el color de su variable.
+                        </p>
+                        <p><strong>Números:</strong> una línea en zigzag azul; cada esquina vale una unidad. Rayas
+                            verdes arriba marcan decenas, puntos rojos en las esquinas indican decimales. Ejemplo:
+                            zigzag de 5 esquinas con 4 puntos rojos → <code>5.4</code>.</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-# Nueva variable
-z = x + y
+        <!-- Control de flujo -->
+        <section id="control" class="section">
+            <h2>Control de flujo</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/control-flujo.png"
+                        alt="Formas de if, elif, else, while, for, break, continue, pass." data-zoom>
+                    <figcaption>
+                        Representaciones para <code>if</code>, <code>elif</code>, <code>else</code>, <code>while</code>,
+                        <code>for</code>, <code>break</code>, <code>continue</code> y <code>pass</code>.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-# Bucle
-for i in range(3):
-    print("Iteración:", i)
+        <!-- Funciones -->
+        <section id="funciones" class="section">
+            <h2>Funciones e importación</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/funciones.png"
+                        alt="Formas para def, return, lambda, *args, **kwargs, import, from import, as." data-zoom>
+                    <figcaption>
+                        Sintaxis gráfica para <code>def</code>/<code>return</code>, <code>lambda</code>,
+                        parámetros <code>*args</code> y <code>**kwargs</code>,
+                        <code>import</code>, <code>from ... import ...</code> y alias <code>as</code>.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-# Función
-def suma(a, b):
-    return a + b
+        <!-- Errores y E/S -->
+        <section id="errores-io" class="section">
+            <h2>Manejo de errores y E/S</h2>
+            <div class="grid">
+                <figure class="card">
+                    <img loading="lazy" src="assets/errores-io.png"
+                        alt="Formas para try, except, finally, raise, y los nodos de print e input." data-zoom>
+                    <figcaption>
+                        <code>try</code>, <code>except</code>, <code>finally</code> y <code>raise</code> tienen gestos
+                        propios. Para Entrada/Salida, <code>print</code> e <code>input</code> se marcan con círculos
+                        naranja y verde.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-resultado = suma(x, int(y))
-print("El resultado de la función es:", resultado)
-</code></pre>
-          <p class="note">En el lenguaje geométrico, cada paso se expresa con formas y colores en vez de palabras
-            clave.</p>
-        </div>
-      </div>
-    </section>
+        <!-- Ejemplo -->
+        <section id="ejemplo" class="section example">
+            <h2>Ejemplo: programa y traducción</h2>
+            <div class="grid two">
+                <figure class="card">
+                    <img loading="lazy" src="assets/ejemplo.png"
+                        alt="Programa visual con asignaciones, comparación, suma, bucle for, definición de función y llamada con print final."
+                        data-zoom>
+                    <figcaption>
+                        El programa hace lo siguiente:
+                        <ol>
+                            <li>Declara dos variables: <code>x = 5</code> y <code>y = 4.2</code>.</li>
+                            <li>Evalúa la condición <code>if x &gt; y</code> y muestra el resultado.</li>
+                            <li>Crea una nueva variable <code>z</code> con la suma de <code>x + y</code>.</li>
+                            <li>Ejecuta un bucle <code>for</code> con tres iteraciones.</li>
+                            <li>Define una función <code>suma(a, b)</code> y la llama.</li>
+                            <li>Imprime el resultado final.</li>
+                        </ol>
+                    </figcaption>
+                </figure>
 
-    <!-- NUEVA SECCIÓN: MÁQUINA VIRTUAL -->
-    <section id="vm" class="section vm-demo">
-      <h2>Máquina Virtual Visual (VMC5)</h2>
-      <p>
-        La <strong>VMC5</strong> es una extensión del lenguaje TreeVisual que ejecuta instrucciones simples en una pila,
-        mostrando gráficamente el resultado de cada operación mediante figuras y colores. Está implementada en Python
-        usando <code>Tkinter</code>.
-      </p>
+                <div class="card code">
+                    <pre><code class="lang py">
+                      x = 5
+                      y = 4.2
 
-      <div class="grid two">
-        <figure class="card">
-          <img loading="lazy" src="assets/vmc5_inicial.png" alt="Interfaz de la VMC5 al iniciar" data-zoom>
-          <figcaption>Interfaz inicial de la máquina virtual.</figcaption>
-        </figure>
+                      if x &gt; y:
+                          print("x es mayor")
+                      else:
+                          print("y es mayor o igual")
 
-        <figure class="card">
-          <img loading="lazy" src="assets/vmc5_add.jpg" alt="Ejemplo de ejecución de la VMC5"
-            data-zoom>
-          <figcaption>Ejemplo de ejecución de un programa con instrucciones sobre números y texto.</figcaption>
-        </figure>
-      </div>
+                      z = x + y
 
-      <h3>Arquitectura interna</h3>
-      <p>La máquina está basada en una arquitectura de pila con un conjunto mínimo de registros y estructuras:</p>
-      <ul>
-        <li><strong>Pila de datos (<code>data_stack</code>)</strong>: almacena los valores intermedios de ejecución.
-        </li>
-        <li><strong>Registro de cursor</strong>: contiene la posición <code>(x, y)</code> actual y la dirección de
-          dibujo (0–3).</li>
-        <li><strong>Pila de bucles (<code>loop_stack</code>)</strong>: controla las instrucciones <code>LOOP</code> y
-          <code>END</code>.
-        </li>
-        <li><strong>Mapa de ocupación (<code>occupied</code>)</strong>: evita que las figuras se solapen en pantalla.
-        </li>
-        <li><strong>ALU</strong>: realiza las operaciones aritméticas básicas (<code>ADD, SUB, MUL, DIV, MOD</code>).
-        </li>
-        <li><strong>Unidad de control</strong>: interpreta cada instrucción, actualiza los registros y dibuja en el
-          lienzo.</li>
-      </ul>
+                      for i in range(3):
+                          print("Iteración:", i)
 
-      <div class="grid two">
-        <figure class="card">
-          <img loading="lazy" src="assets/vmc5_almacenamiento.jpg" alt="Diagrama de almacenamiento de la máquina virtual"
-            data-zoom>
-          <figcaption>Esquema general del almacenamietno interno de la VMC5.</figcaption>
-        </figure>
+                      def suma(a, b):
+                          return a + b
 
-        <div class="card code">
-          <pre><code>
-            # Programa de ejemplo ejecutado en la VMC5
-            >>> push 7
-            STACK: [7]
-            >>> push 8
-            STACK: [7, 8]
-            >>> add
-            STACK: [15]
-            >>> push 6
-            STACK: [15, 6]
-            >>> swap
-            STACK: [6, 15]
-            >>> mul
-            STACK: [90]
-            >>> push 8
-            STACK: [90, 8]
-            >>> div
-            STACK: [11]
-            >>> print abcd
-            STACK: [11]
-          </code></pre>
-        </div>
-      </div>
+                      resultado = suma(x, int(y))
+                      print("El resultado de la función es:", resultado)
+                    </code></pre>
+                    <p class="note">En el lenguaje geométrico, cada paso se representa con figuras y colores.</p>
+                </div>
+            </div>
+        </section>
 
-      <p>El diseño modular de la VMC5 permite ampliar el conjunto de instrucciones (por ejemplo, añadir <code>CLEAR</code>,
-        <code>LOOP</code> o <code>RANDOM</code>) y mantener la compatibilidad con el lenguaje visual TreeVisual.
-      </p>
-    </section>
-  </main>
+        <!-- NUEVA SECCIÓN: MÁQUINA VIRTUAL -->
+        <section id="vm" class="section vm-demo">
+            <h2>Máquina Virtual Visual (VMC5)</h2>
+            <p>La <strong>VMC5</strong> amplía el lenguaje TreeVisual y ejecuta instrucciones simples en una pila,
+                mostrando gráficamente los resultados con <code>Tkinter</code>.</p>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Lenguaje TreeVisual — Hecho por Jaime Montalvo, Marina Jiménez y Hugo Muñoz.</p>
-  </footer>
+            <div class="grid two">
+                <figure class="card">
+                    <img loading="lazy" src="assets/vmc5_inicial.png" alt="Interfaz inicial de la VMC5" data-zoom>
+                    <figcaption>Interfaz inicial de la máquina virtual con el lienzo vacío y la consola de comandos.
+                    </figcaption>
+                </figure>
 
-  <!-- Lightbox -->
-  <dialog id="lightbox">
-    <button class="close" aria-label="Cerrar">✕</button>
-    <img alt="">
-    <p class="caption"></p>
-  </dialog>
+                <figure class="card">
+                    <img loading="lazy" src="assets/vmc5_add.jpg" alt="Ejemplo de ejecución con PUSH y ADD" data-zoom>
+                    <figcaption>Ejecución del programa con instrucciones sobre números y letras</figcaption>
+                </figure>
+            </div>
 
-  <script src="script.js"></script>
+            <h3>Arquitectura interna</h3>
+            <p>Basada en una pila con pocos registros:</p>
+            <ul>
+                <li><strong>data_stack:</strong> pila de datos.</li>
+                <li><strong>cursor:</strong> almacena posición <code>(x, y)</code> y dirección actual.</li>
+                <li><strong>loop_stack:</strong> controla <code>LOOP</code> y <code>END</code>.</li>
+                <li><strong>occupied:</strong> evita solapamientos de figuras.</li>
+                <li><strong>ALU:</strong> realiza operaciones <code>ADD, SUB, MUL, DIV, MOD</code>.</li>
+                <li><strong>Unidad de control:</strong> interpreta instrucciones y actualiza la interfaz.</li>
+            </ul>
+
+            <div class="grid two">
+                <figure class="card">
+                    <img loading="lazy" src="assets/vmc5_almacenamiento.jpg"
+                        alt="Diagrama de arquitectura de la máquina virtual" data-zoom>
+                    <figcaption>Diagrama técnico de la arquitectura interna: pila, registros, ALU, cursor y módulo
+                        gráfico.</figcaption>
+                </figure>
+
+                <div class="card code">
+                    <pre><code># Programa ejemplo
+                      >>> push 7
+                      STACK: [7]
+                      >>> push 8
+                      STACK: [7, 8]
+                      >>> add
+                      STACK: [15]
+                      >>> push 6
+                      STACK: [15, 6]
+                      >>> swap
+                      STACK: [6, 15]
+                      >>> mul
+                      STACK: [90]
+                      >>> push 8
+                      STACK: [90, 8]
+                      >>> div
+                      STACK: [11]
+                      >>> print abcd
+                      STACK: [11]
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Lenguaje TreeVisual — Hecho por Jaime Montalvo, Marina Jiménez y Hugo Muñoz.</p>
+    </footer>
+
+    <dialog id="lightbox">
+        <button class="close" aria-label="Cerrar">✕</button>
+        <img alt="">
+        <p class="caption"></p>
+    </dialog>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
